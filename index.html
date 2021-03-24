@@ -45,14 +45,11 @@
         /* Recibe las caracteristicas del usuario o null su no ha iniciado
         * sesión. */
         usuarioAuth =>{
-          if (usuarioAuth && usuarioAuth.email){
+          if (usuarioAuth && usuarioAuth.nombres){
             // Usuario aceptado.
             // @ts-ignore Muestra el email registrado en Google.
-            email.value = usuarioAuth.email;
+            nombres.value = usuarioAuth.nombres;
             //@ts-ignore Muestra el nombre registrado en Google.
-            nombre.value = usuarioAuth.displayName;
-            //@ts-ignore Muestra el avatar registrado en Google.
-            avatar.src = usuarioAuth.photoURL;
           }else{
             // No ha iniciado sesión. Pide datos para iniciar sesión.
             auth.singInWithRedirect(provider);
